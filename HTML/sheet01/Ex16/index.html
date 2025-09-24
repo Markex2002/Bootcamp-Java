@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Formulario</h2>
+
+    <form action="#" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" maxlength="30"><br><br>
+
+        <label for="apellidos">Apellidos:</label><br>
+        <input type="text" id="apellidos" name="apellidos" maxlength="30"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="asunto">Asunto:</label><br>
+        <select id="asunto" name="asunto" size="3">
+            <option value="presupuesto">Pedir presupuesto</option>
+            <option value="cita">Solicitar cita previa</option>
+            <option value="otros">Otros</option>
+        </select><br><br>
+
+
+        <label>
+            <input type="checkbox" name="conocido[]" value="amigo">
+            Un amigo
+        </label><br>
+        <label>
+            <input type="checkbox" name="conocido[]" value="google">
+            Googleando
+        </label><br>
+        <label>
+            <input type="checkbox" name="conocido[]" value="buzoneo">
+            Buzoneo
+        </label><br>
+        <label>
+            <input type="checkbox" name="conocido[]" value="otros">
+            Otros
+        </label><br><br>
+
+
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" maxlength="300" rows="6" cols="40"></textarea><br><br>
+
+        <label>
+        <input type="checkbox" name="rgpd" required>
+        He leído y acepto el 
+        <a href="#" target="_blank">aviso legal</a> y la 
+        <a href="#" target="_blank">política de privacidad</a>.
+        </label><br><br>
+
+
+        <button type="submit">Ahí va eso</button>
+    </form>
+</body>
+</html>
