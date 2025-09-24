@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Role: navigation -->
+    <nav>
+        <p>Nav</p>
+    </nav>
+
+    <!-- Role: banner -->
+    <header>
+        <p>Header</p>
+    </header>
+
+    <!-- Role: main -->
+    <main>
+        <p>Main</p>
+
+        <!-- Role: article -->
+        <article>
+            <p>Article</p>
+        </article>
+    </main>
+
+
+    <!--
+      Uso apropiado de role:
+    
+      - Se debe usar role para añadir semántica accesible en elementos que
+        no tienen significado semántico nativo, por ejemplo, usar role="button"
+        en un <div> o <span> que funciona como botón.
+    
+      - Útil para mejorar la accesibilidad cuando usamos elementos
+        genéricos (como <div> o <span>).
+    
+      Cuándo NO usar role:
+    
+      - No se debe usar role para cambiar la semántica nativa de un elemento
+        que ya tiene significado semántico. Por ejemplo, no hay que poner 
+        role="button" en un <button> ni role="article" en un <article>.
+            
+        -->
+            
+    <div role="article" aria-labelledby="titulo1" aria-describedby="resumen1">
+        <p>Div Random</p>
+    </div>
+
+
+    <!-- Role: contentinfo -->
+    <footer>
+        <p>Footer</p>
+    </footer>
+</body>
+</html>
