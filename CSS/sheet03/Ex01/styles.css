@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 800px;
+    margin: auto;
+}
+
+
+
+/* POSICIONAMIENTO */
+/* BODY */
+/* NAV */
+nav{
+    margin: 50px 100px;
+    padding: 10px 0px;
+    background-color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    color: rgb(178, 178, 178);
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
+
+}
+/* MAIN */
+main{
+    margin: 0px 100px;
+}
+
+main .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+
+    article{
+        width: calc((100% - 80px) / 3);
+        box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+
+        @media screen and (max-width: 720px) {
+            width: calc((100% - 40px) / 2);
+        }
+        @media screen and (max-width: 600px) {
+            width: 100%;
+        }
+    }
+}
+
+.article-data {
+    padding: 10px;
+    min-height: 160px;
+
+    h3 {
+        margin: 10px 0px;
+        font-size: 16px;
+    }
+
+    p{
+        font-size: 14px;
+    }
+}
+
+.image-wraper {
+    position: relative;
+    display: inline-block;
+    background-color: rgb(216, 216, 216);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+}
+
+.id {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 2px 10px;
+    color: brown;
+    background-color: rgb(198, 193, 193);
+}
+
+.evolves-from{
+    margin: 10px 0px;
+    padding: 0px 8px;
+    border-left: 4px brown solid;
+    color: brown;
+}
+
+img{
+    display: block;
+}
+
+
+/*------------------ ESTILOS /*------------------*/
+/* BODY */
+body{
+    background-color: rgb(255, 242, 0);
+    font-family: 'Ubuntu', sans-serif;
+}
+.corner {
+    width: 0;
+    height: 0;
+    position: fixed;
+}
+.corner-top-left {
+    top: 0;
+    left: 0;
+    border-top: 60px solid black;
+    border-right: 60px solid transparent;
+}
+.corner-top-right {
+    top: 0;
+    right: 0;
+    border-top: 60px solid black;
+    border-left: 60px solid transparent;
+}
+.corner-bottom-left {
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border-top-right-radius: 60px;
+}
+.corner-bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border-top-left-radius: 60px;
+}
+/* NAV */
+/* MAIN */
+main article{
+    background-color: white;
+}
+
+button{
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 10px;
+    font-weight: bold;
+}
+
+
+
+.grass{
+    background-color: rgb(24, 219, 37);
+}
+.poison {
+    background-color: rgb(219, 24, 190);
+}
+.fire {
+    background-color: rgb(240, 158, 36);
+}
+.normal {
+    background-color: rgb(144, 144, 144);
+}
+.water {
+    background-color: rgb(34, 154, 229);
+}
+.flying {
+    background-color: rgb(146, 232, 236);
+}
+.bug {
+    background-color: rgb(158, 207, 105);
+}
