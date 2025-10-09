@@ -13,19 +13,25 @@
 
 /* POSICIONAMIENTO */
 /* BODY */
+body{
+    padding: 0px 100px;
+}
 /* NAV */
 nav{
-    margin: 50px 100px;
-    padding: 10px 0px;
-    background-color: rgba(255, 255, 255, 0.85);
-    text-align: center;
-    color: rgb(178, 178, 178);
-    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
+    .container{
+        background-color: rgba(255, 255, 255, 0.85);
+        text-align: center;
+        color: rgb(178, 178, 178);
+        box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 10px 0px;
+    }
 
 }
 /* MAIN */
 main{
-    margin: 0px 100px;
+    margin: 0px 0px;
 }
 
 main .container{
@@ -48,7 +54,7 @@ main .container{
 }
 
 .article-data {
-    padding: 10px;
+    padding: 20px;
     min-height: 160px;
 
     h3 {
@@ -76,7 +82,7 @@ main .container{
     position: absolute;
     bottom: 0px;
     left: 0px;
-    padding: 2px 10px;
+    padding: 2px 20px;
     color: brown;
     background-color: rgb(198, 193, 193);
 }
@@ -137,17 +143,33 @@ body{
 main article{
     background-color: white;
 }
+.article-data {
+    h3 {
+        margin: 10px 0px;
+        font-size: 16px;
+    }
+    p {
+        font-size: 12px;
+    }
+}
 
-button{
+button {
+    color: brown;
+    border: 1px brown solid;
+    background-color: white;
+    border-radius: 6px;
+    padding: 2px 6px;
+}
+
+/* TIPOS BONITOS, CANCELADOS POR DICTADURA FRAKISTA
+
+button {
     color: white;
     border: none;
     border-radius: 10px;
     padding: 4px 10px;
     font-weight: bold;
 }
-
-
-
 .grass{
     background-color: rgb(24, 219, 37);
 }
@@ -169,3 +191,4 @@ button{
 .bug {
     background-color: rgb(158, 207, 105);
 }
+ */
