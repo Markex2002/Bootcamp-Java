@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* POSICIONAMIENTO */
+/* BODY */
+/* NAV */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{
+        display: flex;
+
+        li{
+            padding: 20px 10px;
+            border-left: 1px gray solid;
+            border-right: 1px gray solid;
+        }
+    }
+}
+
+/* HEADER */
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header section {
+    width: 100%;
+    /* Adjust width as needed */
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    /* Start from outside right */
+    animation: scroll-left 10s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* MAIN */
+/* FOOTER */
+
+
+/*-------------------- ESTILOS --------------------*/
+/* BODY */
+/* NAV */
+nav{
+    background-color: black;
+    color: white;
+
+    li{
+        list-style-type: none;
+    }
+    
+    a{
+        color: white;
+        text-decoration: none;
+    }
+}
+/* HEADER */
+header {
+    height: 100vh;
+    background-image: url("resources/headerBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    h1{
+        color: white;
+        font-size: 102px;
+    }
+
+    section{
+        background-color: blue;
+        color: white;
+    }
+}
+/* MAIN */
+/* FOOTER */
