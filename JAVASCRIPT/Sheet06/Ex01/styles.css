@@ -113,6 +113,27 @@ img{
 }
 
 
+
+
+.pagination {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #e63946;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+
+
+
+
 /*------------------ ESTILOS /*------------------*/
 /* BODY */
 body{

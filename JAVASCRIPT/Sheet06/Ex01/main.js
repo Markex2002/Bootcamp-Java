@@ -1,16 +1,35 @@
-const urlBasePokemon = "https://pokeapi.co/api/v2/pokemon/";
+let currentOffset = 0;
+const limit = 20;
+let totalPages = 0;
+
+pintarPokedexCompleta();
 
 
 //FUNCION PRINCIPAL QUE PINTA LA POKEDEX COMPLETA//
-async function pintarPokedexCompleta() {
+async function pintarPokedexCompleta(currentOffset = 0) {
   try {
-    //Podemos usar ?limit para limitar el numero de pokemons que queremos obtener
-    const response = await fetch(urlBasePokemon + "?limit=151");
+    //Podemos usar "?limit=151" para limitar el numero de pokemons que queremos obtener
+    const urlBasePokemon = "https://pokeapi.co/api/v2/pokemon/" + `?limit=${limit}&offset=${currentOffset}`;
+    const response = await fetch(urlBasePokemon);
     if (!response.ok) {
       throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
     }
     
     const data = await response.json();
+
+    // Calcular total de páginas solo la primera vez
+    if (totalPages === 0) {
+      totalPages = Math.ceil(data.count / limit);
+    }
+
+    //Contamos la cantidad de paginas que tenemos
+    let pTotalPaginas = document.getElementById("totalPaginas");
+    pTotalPaginas.textContent = `Pagina: ${Math.floor(currentOffset / limit) + 1} de ${totalPages}`;
+
+    //Limpiamos el contenedor antes de volver a llenarlo
+    const container = document.querySelector("main .container");
+    container.innerHTML = "";
+
     for (const pokemon of data.results) {
       await obtenerPokemon(pokemon.url);
     }
@@ -135,4 +154,24 @@ async function obtenerEvolucionaDe(urlEspeciesPokemon, divDatos){
 }
 
 
-pintarPokedexCompleta();
+
+
+//--- PAGINACION ---//
+function aumentarPag() {
+  currentOffset += limit;
+  pintarPokedexCompleta(currentOffset);
+}
+
+function reducirPag() {
+  if (currentOffset > 0) {
+      currentOffset -= limit;
+      pintarPokedexCompleta(currentOffset);
+  }
+}
+
+//Añadimos los event listeners a los botones
+let btnNext = document.getElementById("next");
+btnNext.addEventListener("click", aumentarPag);
+
+let btnPrev = document.getElementById("prev");
+btnPrev.addEventListener("click", reducirPag);
