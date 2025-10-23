@@ -1,21 +1,35 @@
 let currentOffset = 0;
 const limit = 20;
 let totalPages = 0;
+let allPokemons = [];
 
+const baseURL = "https://pokeapi.co/api/v2/pokemon/";
+
+cargarTodosLosPokemons();
 pintarPokedexCompleta();
+
+//Función para cargar todos los pokemons al iniciar la aplicacion
+async function cargarTodosLosPokemons() {
+  const url = baseURL + "?limit=9999";
+
+  const response = await fetch(url);
+  const data = await response.json();
+  allPokemons = data.results;
+}
 
 
 //FUNCION PRINCIPAL QUE PINTA LA POKEDEX COMPLETA//
 async function pintarPokedexCompleta(currentOffset = 0) {
   try {
     //Podemos usar "?limit=151" para limitar el numero de pokemons que queremos obtener
-    const urlBasePokemon = "https://pokeapi.co/api/v2/pokemon/" + `?limit=${limit}&offset=${currentOffset}`;
+    const urlBasePokemon = baseURL + `?limit=${limit}&offset=${currentOffset}`;
     const response = await fetch(urlBasePokemon);
     if (!response.ok) {
       throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
     }
     
     const data = await response.json();
+
 
     // Calcular total de páginas solo la primera vez
     if (totalPages === 0) {
@@ -152,6 +166,34 @@ async function obtenerEvolucionaDe(urlEspeciesPokemon, divDatos){
     }
   }
 }
+
+
+
+//--- FILTRADO POR NOMBRE ---//
+//Le damos la funcion al input
+let filtro = document.getElementById("filtro");
+filtro.addEventListener("input", () => {
+  filtrarPorNombre(filtro.value);
+});
+
+//Funcion para filtrar los pokemons por nombre
+async function filtrarPorNombre(nombre) {
+  nombre = nombre.toLowerCase().trim();
+  //Limpiamos el contenedor antes de volver a llenarlo
+  const container = document.querySelector("main .container");
+  container.innerHTML = "";
+
+  //Filtramos todos los pokemons por el nombre
+  const resultados = allPokemons.filter(pokemon =>
+    pokemon.name.includes(nombre)
+  );
+
+  for (const pokemon of resultados) {
+    await obtenerPokemon(pokemon.url);
+  }
+}
+
+
 
 
 
