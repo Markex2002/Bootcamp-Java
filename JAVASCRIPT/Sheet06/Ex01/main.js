@@ -44,9 +44,13 @@ async function pintarPokedexCompleta(currentOffset = 0) {
     const container = document.querySelector("main .container");
     container.innerHTML = "";
 
+
+    let infoPokemons = [];
     for (const pokemon of data.results) {
-      await obtenerPokemon(pokemon.url);
+      infoPokemons.push(obtenerPokemon(pokemon.url));
     }
+
+
 
   } catch (error) {
     if (error instanceof TypeError) {
@@ -60,25 +64,15 @@ async function pintarPokedexCompleta(currentOffset = 0) {
 
 //Funcion para obtener un pokemon por su id//
 async function obtenerPokemon(urlPokemon){
-  try {
     const response = await fetch(urlPokemon);
     if (!response.ok) {
-      throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
+      console.log("No hay conexion o la solicitud falló.");
     }
 
     const data = await response.json();
 
     //Insertamos los datos en el HTML
     rellenarDatosHtml(data);
-
-
-  } catch (error) {
-    if (error instanceof TypeError) {
-      console.error("No hay conexión o la solicitud falló.");
-    } else {
-      console.error("Error:", error.message);
-    }
-  }
 }
 
 
@@ -191,6 +185,7 @@ async function filtrarPorNombre(nombre) {
   for (const pokemon of resultados) {
     await obtenerPokemon(pokemon.url);
   }
+  
 }
 
 
