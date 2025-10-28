@@ -3,7 +3,6 @@ interface personalizacionProps {
   color: string;
 }
 
-
 function MensajePersonalizado(datos: personalizacionProps) {
     let estilos = {
         backgroundColor: datos.color,
