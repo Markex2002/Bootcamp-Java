@@ -1,1 +1,9 @@
-export default "";
+function Tarjeta({children} : {children: React.ReactNode}) {
+  return (
+    <div>
+      {children}
+    </div>
+  );
+}
+
+export default Tarjeta;
