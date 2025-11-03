@@ -1,1 +1,9 @@
-export default "";
+function Cabecera({children} : {children: React.ReactNode}) {
+  return (
+    <div>
+      {children}
+    </div>
+  );
+}
+
+export default Cabecera;
