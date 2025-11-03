@@ -20,7 +20,7 @@ cambias de sala. */
 
 import { useState } from "react";
 import Greeting from "./Greeting";
-
+import RoomStatus from "./RoomStatus";
 
 type level = "basic" | "advanced";
 
@@ -28,29 +28,19 @@ function Ex02({nivel}: {nivel:level}) {
     const [nombre, setNombre] = useState<string>("")
 
     return (
-        <div>
-            {
-                /* nivel === "basic" && */
-                <>
-                    <input name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)}/>
-                    <Greeting name={nombre}></Greeting>
-                </>
-            }
-        </div>
+    <div>
+      {nivel === "basic" ? (
+        <>
+        <input name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)}/>
+        <Greeting name={nombre} />
+        </>
+        ) : nivel === "advanced" ? (
+        <>
+        <RoomStatus roomId={1}></RoomStatus>
+        </>
+    ) : null}
+    </div>
     )
 }
 
 export default Ex02;
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -10,7 +10,6 @@ actualiza correctamente.
 vuelves a mostrar, el contador debe reiniciarse. */
 
 
-
 import {useState, useEffect} from "react";
 
 function Clock() {
@@ -19,11 +18,11 @@ function Clock() {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setTime(new Date().toLocaleDateString)
+            setTime(new Date().toLocaleTimeString())
         }, 1000);
         return () => clearInterval(intervalId)
     }, [])
-    return <p>Clock</p>
+    return <p>{time}</p>
 }
 
 export default Clock;
