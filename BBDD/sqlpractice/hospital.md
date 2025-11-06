@@ -32,3 +32,12 @@ SELECT first_name, last_name, province_name
   FROM patients as p
   Inner join province_names as pn
   ON p.province_id = pn.province_id
+
+8. Show how many patients have a birth_date with 2010 as the birth year.
+SELECT Count(*) 
+  FROM patients 
+  WHERE YEAR(birth_date) = 2010
+
+9. Show the first_name, last_name, and height of the patient with the greatest height.
+SELECT first_name, last_name, MAX(height) as height 
+  FROM patients
