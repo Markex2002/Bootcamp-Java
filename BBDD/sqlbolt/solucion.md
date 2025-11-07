@@ -173,6 +173,3 @@ SELECT COUNT(Name) AS Artists FROM employees where role like "Artist";
 
 Find the number of Employees of each role in the studio
 Find the total number of years employed by all Engineers
-
-
-
